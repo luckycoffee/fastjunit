@@ -9,7 +9,7 @@
 
 ```
 src
-├── lucky-test-parent              // parent 
+├── lucky-test-parent       // parent 
 ├── lucky-test-tool         // 封装的一些测试工具【可独立引用】
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案【需要引入瑞幸内部特定的中间件】
 ├── lucky-test-demo         // 测试用例场景 demo
