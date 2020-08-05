@@ -1,5 +1,5 @@
 
-![license](https://img.shields.io/badge/license-Apache--2.0-green.svg)
+![license](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/license-Apache--2.0-green.svg)
 
 ---
  高效的单元测试
@@ -44,22 +44,22 @@
     <tr>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="/docs/img/contribute/profile1.png">
+          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="/docs/img/contribute/profile1.png">
+          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="/docs/img/contribute/profile1.png">
+          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="https://github.com/mosn" target="_blank">
-          <img width="222px"  src="/docs/img/contribute/profile1.png">
+          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.png">
         </a>
       </td>
     </tr>
