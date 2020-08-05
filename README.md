@@ -7,7 +7,14 @@
 
 ## 工程架构 ##
 
-等待补充中...
+```
+src
+├── lucky-test              // parent 
+├── lucky-test-tool         // 封装的一些测试工具
+├── lucky-middleware-mock   // 瑞幸中间件 mock 方案【需要引入瑞幸内部特定的中间件】
+├── lucky-test-demo         // 场景 demo
+```
+
 
 ## 开发计划 ##
 
@@ -15,8 +22,8 @@ V 1.0.0 完成以下目标：
 
 1. 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
     - CSV,JSON
-2. xx
-3. xx
+2. demo 完善各种用例场景
+3. ...
 
 
 
