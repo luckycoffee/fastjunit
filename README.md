@@ -5,14 +5,14 @@
  高效的单元测试
 
 
-## 工程架构 ##
+## 工程结构 ##
 
 ```
 src
 ├── lucky-test              // parent 
-├── lucky-test-tool         // 封装的一些测试工具
+├── lucky-test-tool         // 封装的一些测试工具【可独立引用】
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案【需要引入瑞幸内部特定的中间件】
-├── lucky-test-demo         // 场景 demo
+├── lucky-test-demo         // 测试用例场景 demo
 ```
 
 
@@ -23,7 +23,8 @@ V 1.0.0 完成以下目标：
 1. 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
     - CSV,JSON
 2. demo 完善各种用例场景
-3. ...
+3. 完善项目文档和 FAQ 问题
+4. 探讨...
 
 
 
