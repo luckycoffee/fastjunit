@@ -10,9 +10,10 @@
 ```
 src
 ├── lucky-test-parent       // parent 
-├── lucky-test-tool         // 封装的一些测试工具【可独立引用】
+├── lucky-test-tool         // 自己封装的一些测试工具和集成一些优秀的开源工具【可独立引用】
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案【需要引入瑞幸内部特定的中间件】
 ├── lucky-test-demo         // 测试用例场景 demo
+
 ```
 
 
@@ -21,7 +22,7 @@ src
 V 1.0.0 完成以下目标：
 
 1. 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
-    - CSV,JSON
+    - 支持的文本格式：CSV,JSON
 2. demo 完善各种用例场景
 3. 完善项目文档和 FAQ 问题
 4. 探讨...
@@ -37,9 +38,10 @@ V 1.0.0 完成以下目标：
 
 实现列表:
 
-- xxx
-    * aa
-    * bb
+- 数据映射
+    * CSV -> JavaObject
+    * JSON -> JavaObject
+
 
 
 ## 文档
