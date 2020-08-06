@@ -24,8 +24,8 @@ V 1.0.0 完成以下目标：
 1. 扩展 Junit,自定义 Runner 和实现自己的一些 Annotation
     - 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
         - 支持的文本格式：CSV,JSON
-    - 支持可排序的 unit case
-    - 隐藏底层 powerMock,通过自定义的 Annotation 实现静态对象的 Mock
+    - 支持可排序的 Unit Case
+    - 隐藏底层 PowerMock,通过自定义的 Annotation 实现静态对象的 Mock
         - 降低开发者对各个框架的学习成本，和各种工具来回切换的繁琐
     - 等待讨论...
 2. demo 完善各种用例场景
@@ -43,9 +43,6 @@ V 1.0.0 完成以下目标：
 
 实现列表:
 
-- 数据映射
-    * CSV -> JavaObject
-    * JSON -> JavaObject
 
 
 
@@ -57,6 +54,10 @@ V 1.0.0 完成以下目标：
 
 
 ## FAQ ##
+
+- [★★★单测共性问题解答★★★](http://wiki.luckincoffee.com/pages/viewpage.action?pageId=47978784)
+
+- 企业微信群：单元测试和自动化测试项目
 
 ## 欢迎贡献
 
