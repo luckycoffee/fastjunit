@@ -10,9 +10,9 @@
 ```
 src
 ├── lucky-test-parent       // parent 
-├── lucky-test-tool         // 自己封装的一些测试工具和集成一些优秀的开源工具【可独立引用】
+├── lucky-test-tool         // 自己封装的一些测试工具和集成一些优秀的开源工具【可独立引用,独立开源】
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案【需要引入瑞幸内部特定的中间件】
-├── lucky-test-demo         // 测试用例场景 demo
+├── lucky-test-demo         // 测试用例场景 最佳实践 demo
 
 ```
 
@@ -21,8 +21,13 @@ src
 
 V 1.0.0 完成以下目标：
 
-1. 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
-    - 支持的文本格式：CSV,JSON
+1. 扩展 Junit,自定义 Runner 和实现自己的一些 Annotation
+    - 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
+        - 支持的文本格式：CSV,JSON
+    - 支持可排序的 unit case
+    - 隐藏底层 powerMock,通过自定义的 Annotation 实现静态对象的 Mock
+        - 降低开发者对各个框架的学习成本，和各种工具来回切换的繁琐
+    - 等待讨论...
 2. demo 完善各种用例场景
 3. 完善项目文档和 FAQ 问题
 4. 探讨...
