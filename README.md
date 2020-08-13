@@ -48,7 +48,7 @@ V 1.0.0 完成以下目标：
 3. 完善项目文档和 FAQ 问题
 4. 探讨...
 
-[JUnit 社区收集的一些第三方插件]("https://github.com/junit-team/junit5/wiki/Third-party-Extensions")
+[JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
 
 ## 发布日志 ##
 
