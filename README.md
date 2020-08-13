@@ -18,19 +18,29 @@ src
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案，依赖于 'lucky-test-tool'【需要引入瑞幸内部特定的中间件】
 ├── lucky-test-demo         // 测试用例场景 最佳实践 demo，依赖于 上面 2个模块。
     |-- main            // 下面采用 DDD 模拟业务代码
-        |-- application
-        |-- domain
-        |-- infrastructure
-        |-- interface
+    |   |-- application
+    |   |-- domain
+    |   |-- infrastructure
+    |   |-- interface
     |-- test        // 下面的分包没有根据上面的业务包结构，主要是根据场景分包，方便参考
-        |-- assert
-        |-- extend
-        |-- order
-        |-- parameterized
-        |-- reflection
+    |   |-- assert
+    |   |-- extend
+    |   |-- order
+    |   |-- parameterized
+    |   |-- reflection
 
 ```
 
+
+采用 JUnit5 做为基础框架的原因
+
+```JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage```
+- JUnit 5是一个模块化和可扩展的测试框架，支持Java 8及更高版本。
+- JUnit 5由三个部分组成——一个基础平台、一个新的编程和扩展模型Jupiter，以及一个名为Vintage的向后兼容的测试引擎。
+- JUnit 5 Jupiter的扩展模型可用于向JUnit中添加自定义功能。
+- 扩展模型API测试生命周期提供了钩子和注入自定义参数的方法（即依赖注入）
+
+JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。本文将指导你完成自定义扩展的设计和实现。这种自定义扩展机制为Java程序员提供了一种创建和执行故事和行为（即BDD规范测试）的方法。
 
 ## 开发计划 ##
 
