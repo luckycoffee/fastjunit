@@ -8,7 +8,7 @@
         <artifactId>java-ut-effective</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>luck-middleware-mock</artifactId>
+    <artifactId>lucky-middleware-mock</artifactId>
 
     <dependencies>
 

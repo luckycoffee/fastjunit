@@ -8,7 +8,7 @@
         <artifactId>java-ut-effective</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>luck-test-tool</artifactId>
+    <artifactId>lucky-test-tool</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 

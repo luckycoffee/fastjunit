@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lucky</groupId>
-            <artifactId>luck-test-tool</artifactId>
+            <artifactId>lucky-test-tool</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
