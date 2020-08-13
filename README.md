@@ -9,10 +9,25 @@
 
 ```
 src
-├── lucky-test-parent       // parent 
+├── pom       // parent 
 ├── lucky-test-tool         // 自己封装的一些测试工具和集成一些优秀的开源工具【可独立引用,独立开源】
+    |-- annotation
+    |-- extend              // junit5 自定义的 ExtendWith
+    |-- runner              // ExtendWith 的集合
+    |-- utils               
 ├── lucky-middleware-mock   // 瑞幸中间件 mock 方案，依赖于 'lucky-test-tool'【需要引入瑞幸内部特定的中间件】
 ├── lucky-test-demo         // 测试用例场景 最佳实践 demo，依赖于 上面 2个模块。
+    |-- main            // 下面采用 DDD 模拟业务代码
+        |-- application
+        |-- domain
+        |-- infrastructure
+        |-- interface
+    |-- test        // 下面的分包没有根据上面的业务包结构，主要是根据场景分包，方便参考
+        |-- assert
+        |-- extend
+        |-- order
+        |-- parameterized
+        |-- reflection
 
 ```
 
@@ -21,18 +36,19 @@ src
 
 V 1.0.0 完成以下目标：
 
-1. 扩展 Junit,自定义 Runner 和实现自己的一些 Annotation
+1. 扩展 Junit5,自定义 ExtendWith 和实现自己的一些 Annotation
     - 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
         - 支持的文本格式：CSV,JSON
     - 支持可排序的 Unit Case
     - 隐藏底层 PowerMock,通过自定义的 Annotation 实现静态对象的 Mock
         - 降低开发者对各个框架的学习成本，和各种工具来回切换的繁琐
-    - 等待讨论...
+    - 各参与人员收集自己小组的优秀的工具类集成进来
+    - 等待讨论
 2. demo 完善各种用例场景
 3. 完善项目文档和 FAQ 问题
 4. 探讨...
 
-
+[JUnit 社区收集的一些第三方插件]("https://github.com/junit-team/junit5/wiki/Third-party-Extensions")
 
 ## 发布日志 ##
 
@@ -51,6 +67,8 @@ V 1.0.0 完成以下目标：
 (**完善中**)
 
 ## 快速开始 ##
+- JDK 8
+- IDEA 需要安装 Lombok
 
 
 ## FAQ ##
@@ -92,3 +110,7 @@ V 1.0.0 完成以下目标：
   </tbody>
 </table>
 </div>
+
+## 参考资料
+
+- [junit5](https://junit.org/junit5/docs/current/user-guide/)
