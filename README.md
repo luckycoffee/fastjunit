@@ -1,4 +1,3 @@
-
 ![license](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/license-Apache--2.0-green.svg)
 
 ---
@@ -40,7 +39,7 @@ src
 - JUnit 5 Jupiter的扩展模型可用于向JUnit中添加自定义功能。
 - 扩展模型API测试生命周期提供了钩子和注入自定义参数的方法（即依赖注入）
 
-JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。本文将指导你完成自定义扩展的设计和实现。这种自定义扩展机制为Java程序员提供了一种创建和执行故事和行为（即BDD规范测试）的方法。
+JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。
 
 ## 开发计划 ##
 
