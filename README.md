@@ -48,6 +48,10 @@ JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这�
 - [IBM Junit5 博客](https://developer.ibm.com/zh/tutorials/j-introducing-junit5-part1-jupiter-api/#N10191)
 - [实现 Junit5 引擎的 testNg](https://github.com/testng-team/testng-junit5)
 
+## 开发规范 ##
+- IDEA 安装阿里巴巴的代码检测插件，上传前代码分析下：**Alibaba Java Coding Guide**
+
+
 ## 开发计划 ##
 
 - [v0.0.1](/docs/plan/v0.0.1.md)
