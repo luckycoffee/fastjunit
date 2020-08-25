@@ -41,23 +41,17 @@ src
 
 JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。
 
+![image](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/junit5.png)
+
+- [junit5](https://junit.org/junit5/docs/current/user-guide/)
+- [JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
+- [IBM Junit5 博客](https://developer.ibm.com/zh/tutorials/j-introducing-junit5-part1-jupiter-api/#N10191)
+- [实现 Junit5 引擎的 testNg](https://github.com/testng-team/testng-junit5)
+
 ## 开发计划 ##
 
-V 1.0.0 完成以下目标：
+- [v0.0.1](/docs/plan/v0.0.1.md)
 
-1. 扩展 Junit5,自定义 ExtendWith 和实现自己的一些 Annotation
-    - 支持文本数据自动映射成 Java 对象，方便 Mock 对象数据提供。
-        - 支持的文本格式：CSV,JSON
-    - 支持可排序的 Unit Case
-    - 隐藏底层 PowerMock,通过自定义的 Annotation 实现静态对象的 Mock
-        - 降低开发者对各个框架的学习成本，和各种工具来回切换的繁琐
-    - 各参与人员收集自己小组的优秀的工具类集成进来
-    - 等待讨论
-2. demo 完善各种用例场景
-3. 完善项目文档和 FAQ 问题
-4. 探讨...
-
-[JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
 
 ## 发布日志 ##
 

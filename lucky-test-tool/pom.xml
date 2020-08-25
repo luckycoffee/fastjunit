@@ -12,6 +12,16 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <organization>
+        <name>LuckyCoffee</name>
+        <url>http://www.luckycoffee.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>zhourj</name>
+            <email>rjzhou@qq.com</email>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
