@@ -41,7 +41,7 @@ src
 
 JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。
 
-![image](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/junit5.png)
+![image](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/develop/docs/img/junit5.png)
 
 - [junit5](https://junit.org/junit5/docs/current/user-guide/)
 - [JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
