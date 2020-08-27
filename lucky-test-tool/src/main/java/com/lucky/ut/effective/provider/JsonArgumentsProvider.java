@@ -1,6 +1,6 @@
 package com.lucky.ut.effective.provider;
 
-import com.lucky.ut.effective.annotation.JsonResource;
+import com.lucky.ut.effective.annotation.JsonSource;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
@@ -18,9 +18,9 @@ import java.util.stream.Stream;
  * @date 2020/8/27 17:28
  * @since 1.0
  */
-public class JsonArgumentsProvider implements ArgumentsProvider, AnnotationConsumer<JsonResource> {
+public class JsonArgumentsProvider implements ArgumentsProvider, AnnotationConsumer<JsonSource> {
 
-    private JsonResource annotation;
+    private JsonSource annotation;
 
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
@@ -33,7 +33,7 @@ public class JsonArgumentsProvider implements ArgumentsProvider, AnnotationConsu
     }
 
     @Override
-    public void accept(JsonResource annotation) {
+    public void accept(JsonSource annotation) {
         this.annotation = annotation;
     }
 

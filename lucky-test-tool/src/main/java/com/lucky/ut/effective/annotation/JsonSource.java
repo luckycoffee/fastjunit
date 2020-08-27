@@ -19,6 +19,6 @@ import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 @Documented
 @API(status = EXPERIMENTAL, since = "5.0")
 @ArgumentsSource(JsonArgumentsProvider.class)
-public @interface JsonResource {
+public @interface JsonSource {
     String[] value();
 }
