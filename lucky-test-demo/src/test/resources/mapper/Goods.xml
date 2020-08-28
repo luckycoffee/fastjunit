@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lucky.uap.code.mapper.GitlabMapper">
+
+    <resultMap id="gitlabMap" type="com.lucky.uap.code.model.po.GitlabPO">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="namespace" jdbcType="VARCHAR" property="namespace"/>
+        <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+        <result column="project_id" jdbcType="VARCHAR" property="projectId"/>
+        <result column="web_url" jdbcType="VARCHAR" property="webUrl"/>
+        <result column="ssh_url" jdbcType="VARCHAR" property="sshUrl"/>
+        <result column="http_url" jdbcType="VARCHAR" property="httpUrl"/>
+        <result column="hook_token" jdbcType="VARCHAR" property="hookToken"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator"/>
+        <result column="modifier" jdbcType="VARCHAR" property="modifier"/>
+        <result column="create_time" jdbcType="DATE" property="createTime"/>
+        <result column="modified_time" jdbcType="DATE" property="modifiedTime"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+    </resultMap>
+
+    <!--根据项目id查询-->
+    <select id="selectOne" parameterType="String" resultMap="gitlabMap">
+        select * from t_app_gitlab where project_id = #{projectId} limit 1
+    </select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@
  高效的单元测试
 
 
-## 工程结构 ##
+## 工程结构  ![badge-jdk-8] ![badge-junit-platform] ![badge-junit-jupiter] ![badge-junit-vintage]
 
 ```
 src
@@ -121,3 +121,12 @@ JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这�
 ## 参考资料
 
 - [junit5](https://junit.org/junit5/docs/current/user-guide/)
+
+
+
+
+
+[badge-jdk-8]: https://img.shields.io/badge/jdk-8-lightgray.svg "JDK-8"
+[badge-junit-platform]: https://img.shields.io/badge/junit-platform-brightgreen.svg "JUnit Platform"
+[badge-junit-jupiter]: https://img.shields.io/badge/junit-jupiter-green.svg "JUnit Jupiter Engine"
+[badge-junit-vintage]: https://img.shields.io/badge/junit-vintage-yellowgreen.svg "JUnit Vintage Engine"
