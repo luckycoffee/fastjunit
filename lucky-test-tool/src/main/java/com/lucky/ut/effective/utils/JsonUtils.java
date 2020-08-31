@@ -8,7 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Reader;
 import java.util.List;
 
 /**
@@ -27,6 +29,10 @@ public class JsonUtils {
 
     public static <T> T readValue(String jsonStr, Class<T> clazz) throws IOException {
         return objectMapper.readValue(jsonStr, clazz);
+    }
+
+    public static <T> T readValue(Reader reader, Class<T> clazz) throws IOException {
+        return objectMapper.readValue(reader, clazz);
     }
 
     public static String writeJsonStr(Object obj) throws JsonProcessingException {
@@ -55,6 +61,14 @@ public class JsonUtils {
 
     public static JsonNode readNode(String jsonStr) throws IOException {
         return objectMapper.readTree(jsonStr);
+    }
+
+    public static JsonNode readNode(Reader reader) throws IOException {
+        return objectMapper.readTree(reader);
+    }
+
+    public static JsonNode readNode(InputStream in) throws IOException {
+        return objectMapper.readTree(in);
     }
 
 }
