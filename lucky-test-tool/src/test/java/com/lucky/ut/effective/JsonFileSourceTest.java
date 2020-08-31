@@ -6,8 +6,6 @@ import com.lucky.ut.effective.annotation.JsonFileSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 
-import javax.json.JsonObject;
-
 /**
  * @author
  * @Description:
