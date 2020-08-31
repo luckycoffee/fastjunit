@@ -1,11 +1,10 @@
 package com.lucky.ut.effective;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.lucky.ut.effective.annotation.JsonSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-
-import javax.json.JsonObject;
 
 /**
  * @author
@@ -17,19 +16,20 @@ public class JsonSourceTest {
 
     @ParameterizedTest
     @JsonSource("{\"key\":\"value\"}")
-    void singleObject(JsonObject object) {
-        Assertions.assertTrue(object.getString("key").equals("value"));
+    void singleObject(JsonNode jsonNode) {
+        Assertions.assertTrue(jsonNode.get("key").asText().equals("value"));
     }
 
     /**
      * When passed <code>[{"key":"value1"},{"key","value2"}]</code>, is
      * executed once per element of the array
-     * @param object the parsed JsonObject array element
+     *
+     * @param arrayNode the parsed JsonObject array element
      */
     @ParameterizedTest
     @JsonSource("[{\"key\":\"value1\"},{\"key\":\"value2\"}]")
-    void arrayOfObjects(JsonObject object) {
-        Assertions.assertTrue(object.getString("key").startsWith("value"));
+    void arrayOfObjects(ArrayNode arrayNode) {
+        Assertions.assertTrue(arrayNode.get(0).get("key").asText().startsWith("value"));
     }
 
 }

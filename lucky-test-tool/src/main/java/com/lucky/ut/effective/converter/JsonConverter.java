@@ -1,10 +1,9 @@
 package com.lucky.ut.effective.converter;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.ArgumentConverter;
-
-import javax.json.JsonObject;
 
 public class JsonConverter implements ArgumentConverter {
 
@@ -22,18 +21,18 @@ public class JsonConverter implements ArgumentConverter {
      */
     @Override
     public Object convert(Object source, ParameterContext context) {
-        if (!(source instanceof JsonObject)) {
+        if (!(source instanceof JsonNode)) {
             throw new ArgumentConversionException("Not a JsonObject");
         }
-        JsonObject json = (JsonObject) source;
+        JsonNode json = (JsonNode) source;
         String name = context.getParameter().getName();
         Class<?> type = context.getParameter().getType();
         if (type == String.class) {
-            return json.getString(name);
+            return json.get(name).asText();
         } else if (type == int.class) {
-            return json.getInt(name);
+            return json.get(name).asInt();
         } else if (type == boolean.class) {
-            return json.getBoolean(name);
+            return json.get(name).asBoolean();
         }
         throw new ArgumentConversionException("Can't convert to type: '" + type.getName() + "'");
     }

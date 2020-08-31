@@ -1,22 +1,19 @@
 package com.lucky.ut.effective.provider;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.lucky.ut.effective.annotation.JsonFileSource;
+import com.lucky.ut.effective.utils.JsonUtils;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.support.AnnotationConsumer;
 import org.junit.platform.commons.util.Preconditions;
 
-import javax.json.Json;
-import javax.json.JsonReader;
-import javax.json.JsonValue;
-import javax.json.JsonValue.ValueType;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
+import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.stream.Stream;
-
-import static java.util.Arrays.stream;
 
 public class JsonFileArgumentsProvider implements AnnotationConsumer<JsonFileSource>, ArgumentsProvider {
 
@@ -32,10 +29,13 @@ public class JsonFileArgumentsProvider implements AnnotationConsumer<JsonFileSou
         this.inputStreamProvider = inputStreamProvider;
     }
 
-    private static JsonValue values(InputStream inputStream) {
-        try (JsonReader reader = Json.createReader(inputStream)) {
-            return reader.read();
+    private static Stream<JsonNode> values(InputStream inputStream) {
+        try {
+            return Stream.of(JsonUtils.readNode(inputStream));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return Stream.of();
     }
 
     @Override
@@ -45,18 +45,11 @@ public class JsonFileArgumentsProvider implements AnnotationConsumer<JsonFileSou
 
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-        boolean isList = stream(context.getRequiredTestMethod().getParameterTypes())
-            .anyMatch(List.class::isAssignableFrom);
-        return stream(resources)
+        Stream<Arguments> argumentsStream = Arrays.stream(resources)
                 .map(resource -> openInputStream(context, resource))
-                .map(JsonFileArgumentsProvider::values)
-                .flatMap(json -> {
-                    if(json.getValueType() == ValueType.ARRAY && !isList){
-                        return json.asJsonArray().stream();
-                    }
-                    return Stream.of(json);
-                })
-            .map(Arguments::arguments);
+                .flatMap(JsonFileArgumentsProvider::values)
+                .map(Arguments::arguments);
+        return argumentsStream;
     }
 
     private InputStream openInputStream(ExtensionContext context, String resource) {

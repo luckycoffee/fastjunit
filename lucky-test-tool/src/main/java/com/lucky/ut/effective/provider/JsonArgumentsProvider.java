@@ -1,16 +1,13 @@
 package com.lucky.ut.effective.provider;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.lucky.ut.effective.annotation.JsonSource;
+import com.lucky.ut.effective.utils.JsonUtils;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.support.AnnotationConsumer;
 
-import javax.json.Json;
-import javax.json.JsonReader;
-import javax.json.JsonStructure;
-import javax.json.JsonValue;
-import javax.json.stream.JsonParsingException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
@@ -28,7 +25,7 @@ public class JsonArgumentsProvider implements AnnotationConsumer<JsonSource>, Ar
     public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
         try {
             return getArguments(value);
-        } catch (JsonParsingException e) {
+        } catch (IOException e) {
             // attempt to parse simplified json e.g. "{'key':value'}"
             if (e.getMessage().contains("Unexpected char 39")) {
                 return getArguments(value.replace("'", "\""));
@@ -43,12 +40,7 @@ public class JsonArgumentsProvider implements AnnotationConsumer<JsonSource>, Ar
         }
     }
 
-    private static Stream<JsonValue> values(Reader reader) {
-        try (JsonReader jsonReader = Json.createReader(reader)) {
-            JsonStructure structure = jsonReader.read();
-            return structure.getValueType() == JsonValue.ValueType.ARRAY
-                    ? structure.asJsonArray().stream()
-                    : Stream.of(structure);
-        }
+    private static Stream<JsonNode> values(Reader reader) throws IOException {
+        return Stream.of(JsonUtils.readNode(reader));
     }
 }
