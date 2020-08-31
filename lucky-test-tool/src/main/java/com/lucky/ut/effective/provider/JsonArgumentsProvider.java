@@ -5,55 +5,50 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.support.AnnotationConsumer;
-import org.junit.platform.commons.PreconditionViolationException;
-import org.junit.platform.commons.util.Preconditions;
 
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicLong;
+import javax.json.Json;
+import javax.json.JsonReader;
+import javax.json.JsonStructure;
+import javax.json.JsonValue;
+import javax.json.stream.JsonParsingException;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.stream.Stream;
 
-/**
- * @author
- * @Description:
- * @date 2020/8/27 17:28
- * @since 1.0
- */
-public class JsonArgumentsProvider implements ArgumentsProvider, AnnotationConsumer<JsonSource> {
-
-    private JsonSource annotation;
+public class JsonArgumentsProvider implements AnnotationConsumer<JsonSource>, ArgumentsProvider {
+    private String value;
 
     @Override
-    public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
-        AtomicLong index = new AtomicLong(0);
-        // @formatter:off
-        return Arrays.stream(this.annotation.value())
-                .map(line -> parseLine(index.getAndIncrement(), line))
-                .map(Arguments::of);
-        // @formatter:on
+    public void accept(JsonSource jsonSource) {
+        value = jsonSource.value();
     }
 
     @Override
-    public void accept(JsonSource annotation) {
-        this.annotation = annotation;
-    }
-
-    /***
-     * 待补充开发
-     * @param index
-     * @param line
-     * @return
-     */
-    private String[] parseLine(long index, String line) {
-        //瞎写的
-        String[] parsedLine = {line, line};
+    public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
         try {
-            //
+            return getArguments(value);
+        } catch (JsonParsingException e) {
+            // attempt to parse simplified json e.g. "{'key':value'}"
+            if (e.getMessage().contains("Unexpected char 39")) {
+                return getArguments(value.replace("'", "\""));
+            }
+            throw e;
         }
-        catch (Throwable throwable) {
-            throw new PreconditionViolationException("");
-//            handleCsvException(throwable, this.annotation);
+    }
+
+    private Stream<? extends Arguments> getArguments(String value) throws IOException {
+        try (Reader reader = new StringReader(value)) {
+            return values(reader).map(Arguments::of);
         }
-        Preconditions.notNull(parsedLine, () -> "Line at index " + index + " contains invalid CSV: \"" + line + "\"");
-        return parsedLine;
+    }
+
+    private static Stream<JsonValue> values(Reader reader) {
+        try (JsonReader jsonReader = Json.createReader(reader)) {
+            JsonStructure structure = jsonReader.read();
+            return structure.getValueType() == JsonValue.ValueType.ARRAY
+                    ? structure.asJsonArray().stream()
+                    : Stream.of(structure);
+        }
     }
 }
