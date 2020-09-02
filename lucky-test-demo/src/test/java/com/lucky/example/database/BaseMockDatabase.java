@@ -1,9 +1,11 @@
 package com.lucky.example.database;
 
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -13,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @ActiveProfiles("junit-test")
 @Import({MockDatabaseConfig.class})
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class) //导入spring测试框架
 @ComponentScan("com.lucky.example.infrastructure.*.mapper")
 public abstract class BaseMockDatabase {
 
