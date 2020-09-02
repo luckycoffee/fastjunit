@@ -12,19 +12,12 @@ import org.apache.ibatis.annotations.Mapper;
 public interface GoodsMapper {
 
     /**
-     * 新增应用流水线
+     * 新增商品
      *
      * @param goodsPo
      */
     void insert(GoodsPo goodsPo);
 
-
-    /**
-     * 根据id查询
-     *
-     * @param pipelineId
-     * @return
-     */
-    GoodsPo queryById(Long pipelineId);
+    GoodsPo selectOne(String id);
 
 }

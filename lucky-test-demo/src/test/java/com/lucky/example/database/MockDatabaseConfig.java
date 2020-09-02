@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  */
 @ActiveProfiles("junit-test")
 @Configuration
-@MapperScan(basePackages = "com.lucky.uap.*.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
+@MapperScan(basePackages = "com.lucky.example.infrastructure.*.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
 public class MockDatabaseConfig {
 
     @Bean
@@ -33,7 +33,7 @@ public class MockDatabaseConfig {
     }
 
     @Bean(name = "sampleDataSource")
-    public DataSource sampleDatasource(UcarincDataSourceProperties simpleDataSourceProperties){
+    public DataSource sampleDatasource(){
         return MockDatabase.context.dataSource();
     }
 

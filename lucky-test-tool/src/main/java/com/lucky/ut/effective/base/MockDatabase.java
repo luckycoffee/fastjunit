@@ -2,12 +2,12 @@ package com.lucky.ut.effective.base;
 
 import org.h2.jdbcx.JdbcDataSource;
 import org.mvnsearch.h2.H2FunctionsLoader;
-
 import javax.sql.DataSource;
 
 /**
  * @author zhourj
  * @date 2020/8/26 15:35
+ * TODO 数据层的操作一般是依赖 mybatis ，spring 。tool 工具目前不想引入这些第三方库，具体如何封装还需要斟酌。
  */
 public class MockDatabase {
 	public final static String USER = "root";
@@ -17,15 +17,6 @@ public class MockDatabase {
 	private MockDatabase(){}
 
 	public static MockDatabase context = new MockDatabase();
-
-
-/*	public MockDatabase getContext(){
-		synchronized (this){
-			if(context == null){
-				context = new MockDatabase();
-			}
-		}
-	}*/
 
 	public DataSource dataSource(){
 		JdbcDataSource jdbcDataSource = new JdbcDataSource();

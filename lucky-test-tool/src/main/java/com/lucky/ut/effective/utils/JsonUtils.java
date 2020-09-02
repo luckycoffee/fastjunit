@@ -23,7 +23,6 @@ public class JsonUtils {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     static {
-//        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

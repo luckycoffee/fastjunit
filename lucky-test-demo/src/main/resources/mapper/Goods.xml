@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lucky.example.infrastructure.database.mapper.GoodsMapper">
+
+    <resultMap id="goodsMap" type="com.lucky.example.infrastructure.database.po.GoodsPo">
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sku" jdbcType="VARCHAR" property="sku"/>
+        <result column="inventory" jdbcType="INTEGER" property="inventory"/>
+    </resultMap>
+
+    <!--根据项目id查询-->
+    <select id="selectOne" parameterType="String" resultMap="goodsMap">
+        select * from t_goods where id = #{id} limit 1
+    </select>
+
+    <insert id="insert" parameterType="com.lucky.example.infrastructure.database.po.GoodsPo">
+        insert into t_goods(
+            id,
+            name,
+            sku,
+            inventory
+        )values (
+            #{id},
+            #{name},
+            #{sku},
+            #{inventory}
+        )
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
