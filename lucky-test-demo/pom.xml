@@ -4,17 +4,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.lucky</groupId>
-        <artifactId>java-ut-effective</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.ucarinc.framework</groupId>
+        <artifactId>ucarinc-framework-strict-parent</artifactId>
+        <version>6.0.14</version>
     </parent>
     <artifactId>lucky-test-demo</artifactId>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.6.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>com.lucky</groupId>
             <artifactId>lucky-test-tool</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.1.0</version>
+            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -24,9 +37,59 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+            <version>2.1.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ucarinc.framework</groupId>
+            <artifactId>ucarinc-framework-starter-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ucarinc.framework</groupId>
+            <artifactId>ucarinc-framework-starter-sharding-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ucarinc.framework</groupId>
+            <artifactId>ucarinc-framework-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ucarinc.framework</groupId>
+            <artifactId>ucarinc-framework-autoconfigure</artifactId>
+            <version>1.0.500-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
-
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.conditions.deactivate = *
+                            junit.jupiter.extensions.autodetection.enabled = true
+                            junit.jupiter.testinstance.lifecycle.default = per_class
+                        </configurationParameters>
+                    </properties>
+                    <excludes>
+                        <exclude/>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
