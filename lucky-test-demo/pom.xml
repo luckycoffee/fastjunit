@@ -22,6 +22,11 @@
         </dependencies>
     </dependencyManagement>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jmockit.version>1.49</jmockit.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.lucky</groupId>
@@ -77,6 +82,11 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                    </argLine>
+                </configuration>
             </plugin>
         </plugins>
     </build>
