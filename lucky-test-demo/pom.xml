@@ -22,11 +22,16 @@
         </dependencies>
     </dependencyManagement>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jmockit.version>1.49</jmockit.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.lucky</groupId>
             <artifactId>lucky-test-tool</artifactId>
-            <version>0.1.0</version>
+            <version>0.1.2</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -78,16 +83,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <properties>
-                        <configurationParameters>
-                            junit.jupiter.conditions.deactivate = *
-                            junit.jupiter.extensions.autodetection.enabled = true
-                            junit.jupiter.testinstance.lifecycle.default = per_class
-                        </configurationParameters>
-                    </properties>
-                    <excludes>
-                        <exclude/>
-                    </excludes>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                    </argLine>
                 </configuration>
             </plugin>
         </plugins>
