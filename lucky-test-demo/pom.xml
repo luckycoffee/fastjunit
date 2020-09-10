@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.lucky</groupId>
             <artifactId>lucky-test-tool</artifactId>
-            <version>0.1.0</version>
+            <version>0.1.2</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -77,18 +77,6 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-                <configuration>
-                    <properties>
-                        <configurationParameters>
-                            junit.jupiter.conditions.deactivate = *
-                            junit.jupiter.extensions.autodetection.enabled = true
-                            junit.jupiter.testinstance.lifecycle.default = per_class
-                        </configurationParameters>
-                    </properties>
-                    <excludes>
-                        <exclude/>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
