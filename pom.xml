@@ -6,7 +6,7 @@
 
     <groupId>com.lucky</groupId>
     <artifactId>java-ut-effective</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <packaging>pom</packaging>
 
     <name>java-ut-effective</name>
@@ -37,6 +37,7 @@
         <testng.version>7.0.0</testng.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jmockit.version>1.49</jmockit.version>
+        <jacoco.version>0.8.5</jacoco.version>
 
     </properties>
 
