@@ -25,6 +25,11 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <properties>
+        <jmockit.version>1.49</jmockit.version>
+        <jacoco.version>0.8.5</jacoco.version>
+    </properties>
+
     <organization>
         <name>LuckyCoffee</name>
         <url>http://www.luckycoffee.com/</url>
@@ -140,11 +145,12 @@
                 <configuration>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                        -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=target/coverage-reports/jacoco-unit.exec
                     </argLine>
                 </configuration>
             </plugin>
             <!--【下面这个跟上面的 surefire 选一个就可以】-->
-            <plugin>
+            <!--<plugin>
                 <groupId>de.sormuras.junit</groupId>
                 <artifactId>junit-platform-maven-plugin</artifactId>
                 <version>1.0.0</version>
@@ -159,6 +165,33 @@
                         </additionalOptions>
                     </javaOptions>
                 </configuration>
+            </plugin>-->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <configuration>
+                    <!--指定生成.exec文件的存放位置-->
+                    <destFile>target/coverage-reports/jacoco-unit.exec</destFile>
+                    <!--Jacoco是根据.exec文件生成最终的报告，所以需指定.exec的存放路径-->
+                    <dataFile>target/coverage-reports/jacoco-unit.exec</dataFile>
+                    <outputDirectory>target/site/jacoco</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
