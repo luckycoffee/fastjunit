@@ -7,27 +7,13 @@
     <groupId>com.lucky</groupId>
     <artifactId>java-ut-effective</artifactId>
     <version>0.1.3</version>
+    <modules>
+        <module>lucky-test-tool</module>
+        <module>lucky-testng-engine</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>java-ut-effective</name>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>project release repository</name>
-            <url>http://maven.zuche.com/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshot</id>
-            <name>project snapshot repository</name>
-            <url>http://maven.zuche.com/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-<!--    <modules>
-        <module>lucky-test-tool</module>
-        <module>lucky-middleware-mock</module>
-    </modules>-->
 
     <properties>
         <lombok.version>1.18.4</lombok.version>
@@ -42,25 +28,17 @@
     </properties>
 
     <dependencyManagement>
-
         <dependencies>
+            <dependency>
+                <groupId>com.lucky</groupId>
+                <artifactId>lucky-testng-engine</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.jmockit</groupId>
                 <artifactId>jmockit</artifactId>
                 <version>${jmockit.version}</version>
             </dependency>
-            <!--<dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>1.10.19</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-junit-jupiter</artifactId>
-                <version>3.4.6</version>
-                <scope>test</scope>
-            </dependency>-->
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -84,11 +62,11 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>${testng.version}</version>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
@@ -105,5 +83,19 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>project release repository</name>
+            <url>http://maven.zuche.com/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshot</id>
+            <name>project snapshot repository</name>
+            <url>http://maven.zuche.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
