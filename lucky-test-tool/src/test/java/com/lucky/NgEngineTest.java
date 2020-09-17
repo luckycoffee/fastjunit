@@ -1,25 +1,25 @@
-package com.lucky.example.testng;
+package com.lucky;
 
-
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 /**
  * @author zhourj
  * @date 2020/8/25 18:14
  */
-public class JunitEngineTest {
-	@BeforeAll
-	public static void setUp() {
+public class NgEngineTest {
+	@BeforeClass
+	public void setUp() {
 		// code that will be invoked when this test is instantiated
+		System.out.println("setUp");
 	}
 
-	@Test()
+	@Test(groups = { "fast" })
 	public void aFastTest() {
 		System.out.println("Fast test");
 	}
 
-	@Test()
+	@Test(groups = { "slow" })
 	public void aSlowTest() {
 		System.out.println("Slow test");
 	}

@@ -28,4 +28,10 @@ public class CalculatorTests {
 		// ...
 	}
 
+	@LuckyTest(description = "测试max方法")
+	void testMax() {
+		Calculator calculator = new Calculator();
+		assertEquals(2, calculator.max(1, 2));
+	}
+
 }
