@@ -8,15 +8,9 @@ import java.util.Set;
  * @Date 2020/9/9 9:44
  * @Description 默认的一些 MYSQL 函数实现，已基本覆盖，特殊函数需自定义扩展。
  */
-public class DefaultH2Functions extends H2Functions {
+public class DefaultH2Functions {
 
-    @Override
-    protected void add() {
-        Set<H2Function> h2FunctionSet = defaultH2Functions();
-        super.addAll(h2FunctionSet);
-    }
-
-    private Set<H2Function> defaultH2Functions() {
+    public Set<H2Function> defaultH2Functions() {
         Set<H2Function> h2FunctionSet = new HashSet<>();
         // date & time
         h2FunctionSet.add(new H2Function("ADDDATE", "com.lucky.ut.effective.h2.mysql.DateTimeFunctions.addDate"));

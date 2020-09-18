@@ -1,39 +1,24 @@
 package com.lucky.ut.effective;
 
-import com.lucky.ut.effective.base.MockDatabase;
-import org.h2.util.IOUtils;
-import org.h2.util.StringUtils;
+import com.lucky.ut.effective.extend.H2DBExtend;
+import com.lucky.ut.effective.h2.H2DBUtil;
+import com.lucky.ut.effective.h2.annotation.H2DB;
 import org.junit.jupiter.api.Test;
-
-import javax.sql.DataSource;
-import java.io.Reader;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * functions test
  *
  * @author xiuyin.cui@luckincoffee.com
  */
+@ExtendWith(H2DBExtend.class)
 public class FunctionsTest {
+
+    @H2DB(value = "/sql/testing.sql")
+    H2DBUtil h2DBUtil;
 
     @Test
     public void testExecuteQuery() throws Exception {
-        DataSource dataSource = MockDatabase.context.dataSource();
-        Connection connection = dataSource.getConnection();
-        Statement statement = connection.createStatement();
-        Reader reader = IOUtils.getReader(this.getClass().getResourceAsStream("/sql/testing.sql"));
-        String content = IOUtils.readStringAndClose(reader, -1);
-        String[] sentences = StringUtils.arraySplit(content, ';', true);
-        for (String sentence : sentences) {
-            if (sentence != null && !sentence.isEmpty() && !sentence.startsWith("--")) {
-                ResultSet resultSet = statement.executeQuery(sentence);
-                resultSet.next();
-                System.out.println("Succeeded: " + sentence + " = " + resultSet.getString(1));
-                resultSet.close();
-            }
-        }
-        statement.close();
+        h2DBUtil.executeQuery();
     }
 }
