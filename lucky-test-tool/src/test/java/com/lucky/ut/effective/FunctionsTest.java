@@ -2,7 +2,6 @@ package com.lucky.ut.effective;
 
 import com.lucky.ut.effective.h2.H2DBUtil;
 import com.lucky.ut.effective.h2.annotation.H2DB;
-import com.lucky.ut.effective.runner.LuckyRunner;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.Test;
  *
  * @author xiuyin.cui@luckincoffee.com
  */
-@LuckyRunner
 public class FunctionsTest {
 
     @H2DB(value = "/sql/testing.sql")
