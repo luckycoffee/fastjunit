@@ -25,7 +25,7 @@ import static org.junit.platform.commons.util.ReflectionUtils.makeAccessible;
 /**
  * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020/9/18 11:12
- * @Description 1.0
+ * @Description JUnit Jupiter extension for {@link H2DB @H2DB}.
  */
 public class H2DBExtend implements BeforeAllCallback, BeforeEachCallback, ParameterResolver {
 
@@ -67,7 +67,7 @@ public class H2DBExtend implements BeforeAllCallback, BeforeEachCallback, Parame
     private void injectFields(ExtensionContext context, Object testInstance, Class<?> testClass,
                               Predicate<Field> predicate) {
         findAnnotatedFields(testClass, H2DB.class, predicate).forEach(field -> {
-            assertValidFieldCandidate(field);
+            assertSupportedType("field", field.getType());
             H2DB h2DB = field.getAnnotation(H2DB.class);
             try {
                 makeAccessible(field).set(testInstance, resolveH2DBUtil(h2DB));
@@ -77,12 +77,6 @@ public class H2DBExtend implements BeforeAllCallback, BeforeEachCallback, Parame
         });
     }
 
-    private void assertValidFieldCandidate(Field field) {
-        assertSupportedType("field", field.getType());
-        if (isPrivate(field)) {
-            throw new ExtensionConfigurationException("@H2DB field [" + field + "] must not be private.");
-        }
-    }
 
     private void assertSupportedType(String target, Class<?> type) {
         if (type != H2DBUtil.class) {

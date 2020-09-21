@@ -1,5 +1,6 @@
 package com.lucky.ut.effective.runner;
 
+import com.lucky.ut.effective.extend.H2DBExtend;
 import com.lucky.ut.effective.extend.LuckyExtend;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -12,6 +13,6 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@ExtendWith({LuckyExtend.class})
+@ExtendWith({LuckyExtend.class, H2DBExtend.class})
 public @interface LuckyRunner {
 }
