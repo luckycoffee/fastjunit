@@ -16,7 +16,7 @@ class DataProviderTest {
 	@DisplayName("数值数据提供工具测试")
 	public void NumberTest(){
 		System.out.println("无参数 Integer 测试：" + DataProvider.Integer());
-		System.out.println("Integer 指定范围测试" + DataProvider.Integer(5,10));
+		System.out.println("Integer 指定范围测试：" + DataProvider.Integer(5,10));
 	}
 
 	@Test
@@ -25,7 +25,7 @@ class DataProviderTest {
 		// 没个定参数，默认 32
 		System.out.println("字符无参数测试：" + DataProvider.String());
 		System.out.println("长度 10 的字符测试：" + DataProvider.String(10));
-		System.out.println("长度 100 的字符测试：" + DataProvider.String(100));
+		System.out.println("长度 12 的字符测试：" + DataProvider.String(12));
 	}
 
 	@Test

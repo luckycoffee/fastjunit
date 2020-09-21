@@ -6,7 +6,7 @@
 
     <groupId>com.lucky</groupId>
     <artifactId>java-ut-effective</artifactId>
-    <version>0.1.3</version>
+    <version>1.0.0-beta</version>
     <modules>
         <module>lucky-test-tool</module>
         <module>lucky-testng-engine</module>

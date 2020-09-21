@@ -12,10 +12,13 @@ public class BeanObject implements Serializable {
 	private Long id;
 	private String name;
 	private Integer age;
+	private Float cases;
+	private Double money;
 	private LocalDate birthDate;
 	private SubBeanObject car;
 	private List<SubBeanObject> friends;
 	private SubBeanObject[] girlFriends;
+	private SexEnum sex;
 
 
 	public Long getId() {
@@ -72,5 +75,29 @@ public class BeanObject implements Serializable {
 
 	public void setGirlFriends(SubBeanObject[] girlFriends) {
 		this.girlFriends = girlFriends;
+	}
+
+	public SexEnum getSex() {
+		return sex;
+	}
+
+	public void setSex(SexEnum sex) {
+		this.sex = sex;
+	}
+
+	public Float getCases() {
+		return cases;
+	}
+
+	public void setCases(Float cases) {
+		this.cases = cases;
+	}
+
+	public Double getMoney() {
+		return money;
+	}
+
+	public void setMoney(Double money) {
+		this.money = money;
 	}
 }

@@ -18,6 +18,8 @@ public class ObjectProvider<T> implements Provider<T> {
 	private static String STRING_TYPE = "java.lang.String";
 	private static String INTEGER_TYPE = "java.lang.Integer";
 	private static String LONG_TYPE = "java.lang.Long";
+	private static String FLOAT_TYPE = "java.lang.Float";
+	private static String DOUBLE_TYPE = "java.lang.Double";
 	private static String LOCAL_DATE_TYPE = "java.time.LocalDate";
 	private static String LOCAL_DATE_TIME_TYPE = "java.time.LocalDateTime";
 	private static String LIST_TYPE = "java.util.List";
@@ -77,6 +79,12 @@ public class ObjectProvider<T> implements Provider<T> {
 		if(clazz.getName().equalsIgnoreCase(LONG_TYPE)){
 			return new LongProvider().generate();
 		}
+		if(clazz.getName().equalsIgnoreCase(FLOAT_TYPE)){
+			return new FloatProvider().generate();
+		}
+		if(clazz.getName().equalsIgnoreCase(DOUBLE_TYPE)){
+			return new DoubleProvider().generate();
+		}
 		if(clazz.getName().equalsIgnoreCase(LOCAL_DATE_TYPE)){
 			return new LocalDateProvider().generate();
 		}
@@ -92,6 +100,10 @@ public class ObjectProvider<T> implements Provider<T> {
 				return new ListProvider<List>((Class)params[0]).generate();
 			}
 			return new ArrayProvider(clazz).generate();
+		}
+		// 枚举
+		if(clazz.isEnum()){
+			return new EnumProvider(clazz).generate();
 		}
 
 		return new ObjectProvider<>(clazz).generate();
