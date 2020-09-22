@@ -21,6 +21,8 @@ src
 ├── lucky-testng-engine    // testNg 兼容 junit5 的引擎 
 ```
 
+> 子模块 `lucky-test-tool` 就是对应着 fastjunit 本身，其它模块可以不用关注。
+
 - **使用文档：** https://luckycoffee.github.io/docs/
 
 
