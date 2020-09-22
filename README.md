@@ -35,7 +35,7 @@ src
 
 ## 发布日志 ##
 
-[v1.0.0-beta - 2020/09/21](./docs/releases/v0.1.0.md)
+[v1.0.0-beta - 2020/09/21](https://luckycoffee.github.io/docs/changelog/)
 
 
 
