@@ -33,7 +33,7 @@ src
 ## 功能列表 ##
 
 - 兼容主流开发框架：Junit4,Junit5,Jmockit，所以单元测试一个 fastjunit 就够了
-- 灵活的参数化测试，支持：CSV,JSON,String 的数据格式
+- 灵活的参数化测试，支持：[CSV,JSON,String 的数据格式](https://luckycoffee.github.io/docs/test-basic/parameter-csv/)
 - 单元测试造数据很痛苦？看看我们的 [dataProvider](https://luckycoffee.github.io/docs/test-basic/dataProvider/)
 - [简单易用的数据库测试工具](https://luckycoffee.github.io/docs/db/h2/)
 
