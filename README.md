@@ -24,23 +24,6 @@ src
 - **使用文档：** https://luckycoffee.github.io/docs/
 
 
-采用 JUnit5 做为基础框架的原因
-
-```JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage```
-- JUnit 5是一个模块化和可扩展的测试框架，支持Java 8及更高版本。
-- JUnit 5由三个部分组成——一个基础平台、一个新的编程和扩展模型Jupiter，以及一个名为Vintage的向后兼容的测试引擎。
-- JUnit 5 Jupiter的扩展模型可用于向JUnit中添加自定义功能。
-- 扩展模型API测试生命周期提供了钩子和注入自定义参数的方法（即依赖注入）
-
-JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。
-
-![image](./docs/img/junit5.png)
-
-- [junit5](https://junit.org/junit5/docs/current/user-guide/)
-- [JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
-- [IBM Junit5 博客](https://developer.ibm.com/zh/tutorials/j-introducing-junit5-part1-jupiter-api/#N10191)
-- [实现 Junit5 引擎的 testNg](https://github.com/testng-team/testng-junit5)
-
 ## 开发规范 ##
 - IDEA 安装阿里巴巴的代码检测插件，上传前代码分析下：**Alibaba Java Coding Guide**
 
