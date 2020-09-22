@@ -29,21 +29,29 @@ src
 ## 开发规范 ##
 - IDEA 安装阿里巴巴的代码检测插件，上传前代码分析下：**Alibaba Java Coding Guide**
 
+## 项目说明
+项目目前处于初期快速迭代阶段，功能还比较有限。今后会从以下几个点出发。
 
-## 功能列表 ##
+- 提供便捷的测试工具
+- 指导如何进行有效的单元测试
+- 探索单元测试可量化的指标
+- Devops 下的单元测试如何推进
 
-- 兼容主流开发框架：Junit4,Junit5,Jmockit，所以单元测试一个 fastjunit 就够了
+## 已有功能 ##
+
+- 兼容主流开发框架：Junit4,Junit5,Jmockit，所以单元测试一个 **fastjunit** 就够了
 - 灵活的参数化测试，支持：[CSV,JSON,String 的数据格式](https://luckycoffee.github.io/docs/test-basic/parameter-csv/)
 - 单元测试造数据很痛苦？看看我们的 [dataProvider](https://luckycoffee.github.io/docs/test-basic/dataProvider/)
 - [简单易用的数据库测试工具](https://luckycoffee.github.io/docs/db/h2/)
+- [逐步完善的单元测试指导文档](https://luckycoffee.github.io/docs/)
 
-目前处于前期阶段，所有的东西正在不断完善和新增中。
+*目前处于前期阶段，所有的东西正在不断完善和新增中,欢迎一起加入共建！*
+
+
 
 ## 发布日志 ##
 
 [v1.0.0-beta - 2020/09/21](https://luckycoffee.github.io/docs/changelog/)
-
-
 
 ## 文档
 
