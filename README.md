@@ -1,4 +1,4 @@
-![license](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/license-Apache--2.0-green.svg)
+![license](./docs/img/license-Apache--2.0-green.svg)
 
 ---
  高效的单元测试
@@ -44,7 +44,7 @@ src
 
 JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这个新模型向JUnit 5中添加自定义功能。
 
-![image](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/develop/docs/img/junit5.png)
+![image](./docs/img/junit5.png)
 
 - [junit5](https://junit.org/junit5/docs/current/user-guide/)
 - [JUnit 社区收集的一些第三方插件](https://github.com/junit-team/junit5/wiki/Third-party-Extensions)
@@ -62,7 +62,7 @@ JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这�
 
 ## 发布日志 ##
 
-[v0.1.0 - 2020年8月5日](/docs/releases/v0.1.0.md)
+[v0.1.0 - 2020年8月5日](./docs/releases/v0.1.0.md)
 
 
 ## 功能列表 ##
@@ -89,9 +89,6 @@ JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这�
 
 ## FAQ ##
 
-- [★★★单测共性问题解答★★★](http://wiki.luckincoffee.com/pages/viewpage.action?pageId=47978784)
-
-- 企业微信群：单元测试和自动化测试项目
 
 ## 欢迎贡献
 
@@ -103,22 +100,22 @@ JUnit5 带来了一个强大的扩展模型。扩展开发人员可以使用这�
     <tr>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
+          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
+          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="" target="_blank">
-          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
+          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
         </a>
       </td>
       <td align="center"  valign="middle">
         <a href="https://github.com/mosn" target="_blank">
-          <img width="222px"  src="http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/contribute/profile1.jpg">
+          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
         </a>
       </td>
     </tr>
