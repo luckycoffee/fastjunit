@@ -1,4 +1,4 @@
-![license](http://git.luckincoffee.com/tech-train/java-ut-effective/raw/master/docs/img/license-Apache--2.0-green.svg)
+![license](./docs/img/license-Apache--2.0-green.svg)
 
 ---
  高效的单元测试
