@@ -1,9 +1,8 @@
 
 
 
-## <font color="red">由于公司法务需要走流程，具体代码暂时去除了，后续完整流程过了再开放，敬请期待！ </font>
+## <font color="red">由于公司法务需要走流程，具体代码暂时去除了，后续完整流程过了再开放，敬请期待！ </font> :blush:
 
-<span style="color: green"> Some green text </span> 
 ---
  高效的单元测试
 
