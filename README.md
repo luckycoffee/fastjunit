@@ -1,8 +1,8 @@
-![license](./docs/img/license-Apache--2.0-green.svg)
 
 
-<h2 style="color: red"> 由于公司法务需要走流程，具体代码暂时去除了，后续流程过了再开放，敬请期待！ </h2>
-
+<div>
+    <h2 style="color: red"> 由于公司法务需要走流程，具体代码暂时去除了，后续流程过了再开放，敬请期待！ </h2>
+</div>
 ---
  高效的单元测试
 
@@ -70,37 +70,6 @@ https://luckycoffee.github.io/docs/
 
 ## 欢迎贡献
 
-
-<div>
-<table>
-  <tbody>
-  <tr></tr>
-    <tr>
-      <td align="center"  valign="middle">
-        <a href="" target="_blank">
-          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
-        </a>
-      </td>
-      <td align="center"  valign="middle">
-        <a href="" target="_blank">
-          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
-        </a>
-      </td>
-      <td align="center"  valign="middle">
-        <a href="" target="_blank">
-          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
-        </a>
-      </td>
-      <td align="center"  valign="middle">
-        <a href="https://github.com/mosn" target="_blank">
-          <img width="222px"  src="./docs/img/contribute/profile1.jpg">
-        </a>
-      </td>
-    </tr>
-    <tr></tr>
-  </tbody>
-</table>
-</div>
 
 ## 参考资料
 
